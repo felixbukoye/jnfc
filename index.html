@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ==================================================================
+  JNFC — LANDING PAGE  (single page, mobile-first)
+  GOAL: one action — "Apply for a Strategy Call"
+
+  ── CONTENT SWAP CHECKLIST (everything marked PLACEHOLDER) ──────────
+  1. HERO PHOTO ............ images/hero.jpg        (drop in real photo)
+  2. CREDENTIAL BADGES ..... #credentials section   (confirm cert names)
+  3. TRANSFORMATION PHOTOS . images/transform-*.jpg + captions
+                             (REAL client photos + REAL results only)
+  4. VIDEO TESTIMONIALS .... thumbnails images/video-*.jpg
+                             + real embeds (see VIDEO PLACEHOLDER in main.js)
+  5. APPLICATION FORM ...... #applyForm in index.html — wire to your form
+                             handler (Formspree / Typeform / CRM), see main.js
+  6. SOCIAL LINKS + EMAIL .. footer (currently "#")
+  7. STATS ("100+ women coached") → replace with real numbers
+  =================================================================== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JNFC — Jordan’s Nutrition &amp; Fitness Coaching | 1:1 Coaching for Women</title>
+<meta name="description" content="Faith-rooted 1:1 health coaching for women. Real plans for your body, your faith, and your season — from an RN and ISSA-certified coach. Apply for a strategy call.">
+<meta name="theme-color" content="#701C27">
+<meta property="og:title" content="JNFC — Stop Restarting Every Monday.">
+<meta property="og:description" content="Faith-rooted 1:1 coaching for women who are done guessing. Apply for a free strategy call.">
+<meta property="og:image" content="images/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══════════ SVG ICON SPRITE (inline, no dependencies) ══════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.6v5.1c0 4.6-3 7.7-7 9.3-4-1.6-7-4.7-7-9.3V5.6L12 3z"/><path d="M9 11.8l2.1 2.1L15.2 9.7"/></symbol>
+  <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 3.5V8h-4.5"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3.5c1.2 3-3.2 4.8-3.2 8.7a3.9 3.9 0 0 0 7.8 0c0-2.1-1.3-3.2-2.1-4.4 0 0-.4 1.6-1.6 1.9.5-2.1-.2-4.4-.9-6.2z"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 3.5v17"/><path d="M6.8 8.5h10.4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.5V12l3 2.4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M10.2 8.8v6.4l5.4-3.2z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15"/><path d="M13.5 6l6 6-6 6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5l2 5.7 5.7 2-5.7 2-2 5.7-2-5.7-5.7-2 5.7-2z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.6"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.9" cy="7.1" r=".9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path d="M14 4v10.4a3.7 3.7 0 1 1-3-3.6"/><path d="M14 4c.4 2.3 2 3.9 4.5 4.2"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="3" y="6.2" width="18" height="11.6" rx="3.4"/><path d="M10.8 9.8l4 2.2-4 2.2z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.6"/><path d="M4.5 7.5l7.5 5.7 7.5-5.7"/></symbol>
+</svg>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="#top" aria-label="JNFC — home">
+      <span class="logo-mark">JNFC</span>
+      <span class="logo-sub">Jordan’s Nutrition &amp; Fitness Coaching</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#the-call">The Call</a>
+      <a href="#who">Who It’s For</a>
+      <a href="#results">Results</a>
+      <a href="#why">Why JNFC</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="head-actions">
+      <button class="btn-cta btn-sm" data-apply type="button">Apply for a Strategy Call</button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ══════════ 1 · HERO ══════════ -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">1:1 coaching for women · Faith-rooted · Evidence-backed</p>
+        <h1 class="display">Stop restarting every&nbsp;Monday.</h1>
+        <p class="lede">
+          You’ve done the diets. You’ve deleted the apps. JNFC gives you what no 12-week
+          plan ever has — <strong>a real coach and a real plan</strong> built around your body,
+          your faith, and the season of life you’re actually in.
+        </p>
+        <div class="cta-row">
+          <button class="btn-cta" data-apply type="button">
+            Apply for a Strategy Call
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+          <p class="micro">Free · 30 minutes · No pressure, ever</p>
+        </div>
+      </div>
+
+      <figure class="hero-photo">
+        <span class="arch arch-back" aria-hidden="true"></span>
+        <!-- PLACEHOLDER IMAGE → replace images/hero.jpg with a real brand photo -->
+        <img src="images/hero.jpg"
+             alt="Placeholder brand photo — confident woman in athletic wear, warm studio light. Swap for the real hero photo before launch."
+             width="920" height="1150" fetchpriority="high">
+        <span class="ph-tag">Placeholder image</span>
+        <figcaption class="hero-stat">
+          <!-- PLACEHOLDER STAT → replace with real number -->
+          <strong>100+</strong>
+          <span>women coached<br>1:1 and counting</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ 2 · CREDIBILITY STRIP ══════════ -->
+  <div class="trust" id="credentials" aria-label="Credentials">
+    <div class="wrap">
+      <p class="trust-label">Coached by credentials, not vibes</p>
+      <!-- PLACEHOLDER: confirm exact certification names before launch -->
+      <ul class="badges">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>ISSA</strong><span>Certified Personal Trainer</span></div></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>RN</strong><span>Registered Nurse</span></div></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>CPPC</strong><span>Certified Pre &amp; Postnatal Coach</span></div></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>CNC</strong><span>Certified Nutrition Coach</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════ 3 · WHAT THE CALL COVERS ══════════ -->
+  <section class="sec sec-call" id="the-call">
+    <div class="wrap sec-head">
+      <p class="kicker">The strategy call</p>
+      <h2 class="display-sm">30 minutes. Zero pressure.<br>Total clarity.</h2>
+      <p class="sec-sub">This isn’t a sales trap. It’s a working call — and you’ll leave with value whether we ever work together or not. Here’s exactly what happens:</p>
+    </div>
+    <div class="wrap">
+      <div class="call-panel">
+        <ul class="checklist">
+          <li>
+            <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+            <div><strong>Your story, your season.</strong> Health history, life stage, faith rhythm, and what you actually want — not what a chart says you should want.</div>
+          </li>
+          <li>
+            <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+            <div><strong>The honest audit.</strong> What’s really been blocking your progress. (Spoiler: it was never laziness.)</div>
+          </li>
+          <li>
+            <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+            <div><strong>Your roadmap, sketched live.</strong> What a JNFC plan would look like for you — food, strength training, rest, and rhythms.</div>
+          </li>
+          <li>
+            <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+            <div><strong>One step you can use immediately.</strong> You keep it whether or not you ever enroll. That’s a promise.</div>
+          </li>
+          <li>
+            <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+            <div><strong>No chasing, no upsell.</strong> If JNFC isn’t the right fit, we’ll tell you straight — and point you somewhere better.</div>
+          </li>
+        </ul>
+        <div class="cta-row cta-center">
+          <button class="btn-cta" data-apply type="button">
+            Apply for a Strategy Call
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 4 · WHO THIS IS FOR ══════════ -->
+  <section class="sec sec-who" id="who">
+    <div class="wrap sec-head">
+      <p class="kicker">Who this is for</p>
+      <h2 class="display-sm">Built for the woman who’s done guessing.</h2>
+    </div>
+    <div class="wrap">
+      <div class="for-grid">
+        <article class="for-card">
+          <svg class="ic ic-maroon" aria-hidden="true"><use href="#i-cycle"/></svg>
+          <h3>You’ve tried everything</h3>
+          <p>Keto, fasting, the point-counting app. Nothing stuck — because nothing was ever built for <em>your</em> body. That ends here.</p>
+        </article>
+        <article class="for-card">
+          <svg class="ic ic-maroon" aria-hidden="true"><use href="#i-flame"/></svg>
+          <h3>You want truth, not hype</h3>
+          <p>No detox teas. No shame spirals. No “just try harder.” Evidence, encouragement, and a little tough love when you need it.</p>
+        </article>
+        <article class="for-card">
+          <svg class="ic ic-blush" aria-hidden="true"><use href="#i-cross"/></svg>
+          <h3>Faith matters to you</h3>
+          <p>You want your health to line up with how you’re called to live — stewardship and grace, not guilt and punishment.</p>
+        </article>
+        <article class="for-card">
+          <svg class="ic ic-blush" aria-hidden="true"><use href="#i-clock"/></svg>
+          <h3>You’re in a real season</h3>
+          <p>Postpartum. Perimenopause. Career, kids, church, life. Your plan has to fit your calendar — not the other way around.</p>
+        </article>
+      </div>
+
+      <div class="notfor">
+        <h3>Honest? Here’s who this isn’t for.</h3>
+        <ul>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>You want a two-week quick fix</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>You want a 1,200-calorie starvation sheet</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>You aren’t ready to change <em>anything</em></li>
+        </ul>
+        <p>If that stung a little — good. That’s usually the woman we do our best work with.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 5 · TRANSFORMATION GALLERY (the one & only gallery) ══════════ -->
+  <section class="sec sec-results" id="results">
+    <div class="wrap sec-head">
+      <p class="kicker">The results</p>
+      <h2 class="display-sm">Real women. Real work.<br>Real change.</h2>
+      <p class="sec-sub">No filters, no fads — consistent women with a plan built for them.</p>
+    </div>
+    <div class="wrap">
+      <div class="gallery">
+        <!-- PLACEHOLDER: composite before/after sample — replace with REAL client photo + REAL result -->
+        <figure class="g-item">
+          <div class="g-media">
+            <img src="images/transform-1.jpg" alt="Placeholder before and after photo — sample only. Replace with a real client transformation photo." loading="lazy">
+            <span class="ph-tag">Placeholder</span>
+            <span class="ba ba-before">Before</span>
+            <span class="ba ba-after">After</span>
+          </div>
+          <figcaption><strong>Amara</strong> — down 15 lbs in 10 weeks</figcaption>
+        </figure>
+        <!-- PLACEHOLDER: composite before/after sample — replace with REAL client photo + REAL result -->
+        <figure class="g-item">
+          <div class="g-media">
+            <img src="images/transform-2.jpg" alt="Placeholder before and after photo — sample only. Replace with a real client transformation photo." loading="lazy">
+            <span class="ph-tag">Placeholder</span>
+            <span class="ba ba-before">Before</span>
+            <span class="ba ba-after">After</span>
+          </div>
+          <figcaption><strong>Dani, 43</strong> — first strict pull-up, off the blood-pressure watch list</figcaption>
+        </figure>
+        <!-- PLACEHOLDER: composite before/after sample — replace with REAL client photo + REAL result -->
+        <figure class="g-item">
+          <div class="g-media">
+            <img src="images/transform-3.jpg" alt="Placeholder before and after photo — sample only. Replace with a real client transformation photo." loading="lazy">
+            <span class="ph-tag">Placeholder</span>
+            <span class="ba ba-before">Before</span>
+            <span class="ba ba-after">After</span>
+          </div>
+          <figcaption><strong>Priya</strong> — 20 lbs down, energy back for her kids</figcaption>
+        </figure>
+      </div>
+      <p class="fine-print">Sample imagery shown — swap in real client photos and verified results before launch. Individual results vary; these women showed up consistently. So can you.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 6 · VIDEO TESTIMONIALS ══════════ -->
+  <section class="sec sec-voices" id="voices">
+    <div class="wrap sec-head">
+      <p class="kicker">In their words</p>
+      <h2 class="display-sm">Don’t take my word for it.</h2>
+    </div>
+    <div class="wrap">
+      <div class="vid-row">
+        <!-- PLACEHOLDER: sample thumbnail — replace with a chosen video still; wire real video embed in main.js -->
+        <button class="vid-card" type="button" data-video="1" data-name="Maya">
+          <span class="vid-thumb">
+            <img src="images/video-1.jpg" alt="Placeholder testimonial video thumbnail — Maya. Replace with a real video still." loading="lazy">
+            <span class="ph-tag">Placeholder</span>
+            <span class="play" aria-hidden="true"><svg class="ic"><use href="#i-play"/></svg></span>
+          </span>
+          <span class="vid-cap"><strong>Maya</strong>“Down 18 lbs without giving up Sunday dinner.”</span>
+        </button>
+        <!-- PLACEHOLDER: sample thumbnail — replace with a chosen video still; wire real video embed in main.js -->
+        <button class="vid-card" type="button" data-video="2" data-name="Renee">
+          <span class="vid-thumb">
+            <img src="images/video-2.jpg" alt="Placeholder testimonial video thumbnail — Renee. Replace with a real video still." loading="lazy">
+            <span class="ph-tag">Placeholder</span>
+            <span class="play" aria-hidden="true"><svg class="ic"><use href="#i-play"/></svg></span>
+          </span>
+          <span class="vid-cap"><strong>Renee</strong>“Strongest I’ve ever been — at 46.”</span>
+        </button>
+        <!-- PLACEHOLDER: sample thumbnail — replace with a chosen video still; wire real video embed in main.js -->
+        <button class="vid-card" type="button" data-video="3" data-name="Tasha">
+          <span class="vid-thumb">
+            <img src="images/video-3.jpg" alt="Placeholder testimonial video thumbnail — Tasha. Replace with a real video still." loading="lazy">
+            <span class="ph-tag">Placeholder</span>
+            <span class="play" aria-hidden="true"><svg class="ic"><use href="#i-play"/></svg></span>
+          </span>
+          <span class="vid-cap"><strong>Tasha</strong>“Postpartum to confident — and calm.”</span>
+        </button>
+      </div>
+      <p class="fine-print">Placeholder stills &amp; quotes — replace with real testimonial videos before launch.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 7 · WHY JNFC IS DIFFERENT ══════════ -->
+  <section class="sec sec-why" id="why">
+    <div class="wrap sec-head">
+      <p class="kicker">Why JNFC</p>
+      <h2 class="display-sm">This isn’t a template plan.<br>It’s a calling.</h2>
+    </div>
+    <div class="wrap">
+      <div class="why-grid">
+        <article class="why-card">
+          <span class="why-num" aria-hidden="true">01</span>
+          <h3>Rooted in faith</h3>
+          <p>Your health is stewardship, not vanity. We build goals that honor your body and your beliefs — grace over guilt, progress over perfection.</p>
+        </article>
+        <article class="why-card">
+          <span class="why-num" aria-hidden="true">02</span>
+          <h3>Medical-grade credibility</h3>
+          <p>Jordan is an RN and ISSA-certified trainer. That means evidence over trends — and knowing when something needs your doctor, not your coach.</p>
+        </article>
+        <article class="why-card">
+          <span class="why-num" aria-hidden="true">03</span>
+          <h3>Truly 1:1 — coached, not sold</h3>
+          <p>No recycled PDFs. No group-chat disappearing act. A plan built on your labs, your season, your life — with a coach who actually knows your name.</p>
+        </article>
+      </div>
+      <p class="founder-line">“I got tired of watching women diet themselves into the ground. So I built the thing I wished existed.” <span>— Jordan, founder · RN · ISSA-CPT · CPPC</span></p>
+    </div>
+  </section>
+
+  <!-- ══════════ 8 · FAQ ══════════ -->
+  <section class="sec sec-faq" id="faq">
+    <div class="wrap sec-head">
+      <p class="kicker">Questions</p>
+      <h2 class="display-sm">Asked. Answered.</h2>
+    </div>
+    <div class="wrap faq-wrap">
+      <details>
+        <summary>How much does it cost?</summary>
+        <p>Every JNFC plan is built 1:1, so pricing depends on what you need. Most women invest less per month than they’d already been spending on abandoned programs and takeout spirals. You’ll get an exact number on your strategy call — before you commit to anything.</p>
+      </details>
+      <details>
+        <summary>How much time will this take?</summary>
+        <p>Less than you fear. Workouts run 30–40 minutes, 3–4 days a week. Check-ins take about 10 minutes weekly. If your plan doesn’t fit your real calendar, it’s a bad plan — so we build around your life.</p>
+      </details>
+      <details>
+        <summary>I’m a total beginner (or I have a lot to lose). Is this for me?</summary>
+        <p>Yes — beginners are JNFC’s favorite people. You’ll never be thrown into an advanced program to “prove” yourself. We meet your body exactly where it is and progress from there.</p>
+      </details>
+      <details>
+        <summary>Do I have to be a Christian to work with JNFC?</summary>
+        <p>No. Faith is how Jordan coaches — it shapes the grace-first approach — but you will never be pressured or preached at. Women of every background are welcome and respected here.</p>
+      </details>
+      <details>
+        <summary>What happens after I apply?</summary>
+        <p>You’ll answer a few short questions (about 3 minutes), then pick a time for your free 30-minute strategy call. Within two business days you’ll hear back personally — not an auto-responder. If it’s not a fit, we’ll tell you honestly and point you to someone better suited.</p>
+      </details>
+      <details>
+        <summary>Is this a diet?</summary>
+        <p>No. No meal plans faxed from 2014, no 1,200-calorie punishment. You’ll learn a sustainable way of eating for <em>your</em> body — plus strength training, sleep, and stress work — so the results outlive the program.</p>
+      </details>
+      <div class="cta-row cta-center faq-cta">
+        <button class="btn-cta" data-apply type="button">
+          Apply for a Strategy Call
+          <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════ 9 · FOOTER ══════════ -->
+<footer class="footer">
+  <div class="wrap foot-cta">
+    <h2 class="display-sm">Ready when you are.</h2>
+    <p>One application. One honest conversation. A plan that finally fits.</p>
+    <button class="btn-cta" data-apply type="button">
+      Apply for a Strategy Call
+      <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </button>
+  </div>
+
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <span class="logo-mark logo-mark-lg">JNFC</span>
+      <p>Faith-rooted 1:1 nutrition &amp; fitness coaching for women.<br>Body. Mind. Spirit.</p>
+    </div>
+    <div class="foot-contact">
+      <h3>Contact</h3>
+      <!-- PLACEHOLDER: real email + social handles -->
+      <a href="mailto:hello@jnfc.coaching"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>hello@jnfc.coaching</a>
+      <div class="socials">
+        <a href="#" aria-label="JNFC on Instagram (placeholder link)"><svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg></a>
+        <a href="#" aria-label="JNFC on TikTok (placeholder link)"><svg class="ic" aria-hidden="true"><use href="#i-tt"/></svg></a>
+        <a href="#" aria-label="JNFC on YouTube (placeholder link)"><svg class="ic" aria-hidden="true"><use href="#i-yt"/></svg></a>
+      </div>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <h3>Explore</h3>
+      <a href="#the-call">The Call</a>
+      <a href="#results">Results</a>
+      <a href="#why">Why JNFC</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+
+  <div class="wrap foot-legal">
+    <p>© 2026 JNFC — Jordan’s Nutrition &amp; Fitness Coaching. All rights reserved.</p>
+    <p class="foot-note">Demo page — placeholder copy, photos &amp; stats. Replace before launch (see README).</p>
+  </div>
+</footer>
+
+<!-- ══════════ STICKY CTA (appears after the hero) ══════════ -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <button class="btn-cta" data-apply type="button">
+    Apply for a Strategy Call
+    <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+  </button>
+</div>
+
+<!-- ══════════ APPLY MODAL ══════════ -->
+<div class="modal" id="applyModal" hidden role="dialog" aria-modal="true" aria-labelledby="applyTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-card">
+    <button class="modal-x" type="button" data-close-modal aria-label="Close">
+      <svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+
+    <div class="modal-body" id="applyFormView">
+      <p class="kicker">Step 1 of 1</p>
+      <h2 class="display-xs" id="applyTitle">Apply for your strategy call</h2>
+      <p class="modal-sub">Three minutes, six questions. If we’re a fit, you’ll book your free 30-minute call right after.</p>
+
+      <!-- PLACEHOLDER FORM → wire the submit handler in main.js to your real form endpoint -->
+      <form id="applyForm" novalidate>
+        <div class="field">
+          <label for="fName">First name</label>
+          <input id="fName" name="firstName" type="text" autocomplete="given-name" required placeholder="Your first name">
+        </div>
+        <div class="field">
+          <label for="fEmail">Email</label>
+          <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="fIg">Instagram handle <span class="opt">(optional)</span></label>
+          <input id="fIg" name="instagram" type="text" autocomplete="off" placeholder="@yourhandle">
+        </div>
+        <div class="field">
+          <label for="fGoal">What are you looking for right now?</label>
+          <select id="fGoal" name="goal" required>
+            <option value="" selected disabled>Choose one…</option>
+            <option>Weight loss that finally lasts</option>
+            <option>Strength &amp; energy</option>
+            <option>Postpartum return</option>
+            <option>Habits, mindset &amp; faith rhythm</option>
+            <option>Not sure yet — help me decide</option>
+          </select>
+        </div>
+        <button class="btn-cta btn-full" type="submit">
+          Submit my application
+          <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <p class="micro micro-center">Free to apply · Takes ~3 minutes · No spam, ever</p>
+      </form>
+    </div>
+
+    <div class="modal-body" id="applySuccessView" hidden>
+      <svg class="ic success-ic" aria-hidden="true"><use href="#i-spark"/></svg>
+      <h2 class="display-xs">Application received.</h2>
+      <p class="modal-sub" id="successMsg">Check your inbox — next steps are on the way.</p>
+      <div class="demo-note">
+        <strong>Demo form.</strong> Before launch, connect this form to your real application
+        tool (Typeform, Formspree, Jotform, or your CRM) inside <code>main.js</code>.
+      </div>
+      <button class="btn-cta btn-full" type="button" data-close-modal>Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ VIDEO PLACEHOLDER MODAL ══════════ -->
+<div class="modal" id="videoModal" hidden role="dialog" aria-modal="true" aria-labelledby="videoTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-card modal-card-video">
+    <button class="modal-x" type="button" data-close-modal aria-label="Close">
+      <svg class="ic" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+    <h2 class="display-xs" id="videoTitle">Testimonial</h2>
+    <!-- PLACEHOLDER → replace this box with the real <iframe> embed (YouTube/Vimeo), 16:9 -->
+    <div class="video-frame">
+      <svg class="ic" aria-hidden="true"><use href="#i-play"/></svg>
+      <p><strong id="videoName"></strong>’s video goes here.</p>
+      <p class="micro">Embed the real testimonial (YouTube / Vimeo iframe) in <code>main.js</code>.</p>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
